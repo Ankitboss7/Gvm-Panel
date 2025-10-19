@@ -15,7 +15,7 @@ echo "
 "
 
 git clone https://github.com/Ankitboss7/Gvm-Panel.git
-apt install unzip -y && unzip Gvm.py && unzip templates
+apt install unzip -y && unzip templates
 cd Gvm-Panel
 apt update
 apt install python3 -y
