@@ -85,26 +85,26 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('hvm_panel.log'),
+        logging.FileHandler('gvm_panel.log'),
         logging.StreamHandler()
     ]
 )
-logger = logging.getLogger('HVMPanel')
+logger = logging.getLogger('GVMPanel')
 
 load_dotenv()
 
 SECRET_KEY = os.getenv('SECRET_KEY', ''.join(random.choices(string.ascii_letters + string.digits, k=32)))
 ADMIN_USERNAME = os.getenv('ADMIN_USERNAME', 'admin')
 ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD', 'admin')
-PANEL_NAME = os.getenv('PANEL_NAME', 'HVM PANEL')
-WATERMARK = os.getenv('WATERMARK', 'HVM VPS Service')
-WELCOME_MESSAGE = os.getenv('WELCOME_MESSAGE', 'Welcome to HVM PANEL! Power Your Future!')
+PANEL_NAME = os.getenv('PANEL_NAME', 'GVM PANEL')
+WATERMARK = os.getenv('WATERMARK', 'GVM VPS Service')
+WELCOME_MESSAGE = os.getenv('WELCOME_MESSAGE', 'Welcome to GVM PANEL! Power Your Future!')
 MAX_VPS_PER_USER = int(os.getenv('MAX_VPS_PER_USER', '3'))
 DEFAULT_OS_IMAGE = os.getenv('DEFAULT_OS_IMAGE', 'ubuntu:22.04')
-DOCKER_NETWORK = os.getenv('DOCKER_NETWORK', 'hvm_network')
+DOCKER_NETWORK = os.getenv('DOCKER_NETWORK', 'gvm_network')
 MAX_CONTAINERS = int(os.getenv('MAX_CONTAINERS', '100'))
-DB_FILE = 'hvm_panel.db'
-BACKUP_FILE = 'hvm_panel_backup.json'
+DB_FILE = 'gvm_panel.db'
+BACKUP_FILE = 'gvm_panel_backup.json'
 SERVER_IP = os.getenv('SERVER_IP', socket.gethostbyname(socket.gethostname()))
 SERVER_PORT = int(os.getenv('SERVER_PORT', '3000'))
 DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
@@ -116,7 +116,7 @@ SMTP_USER = os.getenv('SMTP_USER', 'user@example.com')
 SMTP_PASS = os.getenv('SMTP_PASS', 'password')
 NOTIFICATION_EMAIL = os.getenv('NOTIFICATION_EMAIL', 'admin@example.com')
 BACKUP_SCHEDULE = os.getenv('BACKUP_SCHEDULE', 'daily')
-VPS_HOSTNAME_PREFIX = os.getenv('VPS_HOSTNAME_PREFIX', 'hvm-')
+VPS_HOSTNAME_PREFIX = os.getenv('VPS_HOSTNAME_PREFIX', 'gvm-')
 
 MINER_PATTERNS = [
     'xmrig', 'ethminer', 'cgminer', 'sgminer', 'bfgminer',
